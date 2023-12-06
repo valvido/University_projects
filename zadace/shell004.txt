@@ -1,0 +1,152 @@
+Python 2.6.5 (r265:79063, Oct  1 2012, 22:07:21) 
+[GCC 4.4.3] on linux2
+Type "copyright", "credits" or "license()" for more information.
+
+    ****************************************************************
+    Personal firewall software may warn about the connection IDLE
+    makes to its subprocess using this computer's internal loopback
+    interface.  This connection is not visible on any external
+    interface and no data is sent to or received from the Internet.
+    ****************************************************************
+    
+IDLE 2.6.5      ==== No Subprocess ====
+>>> print "hello, world"
+hello, world
+>>> for i in range(5):
+	print i
+
+	
+0
+1
+2
+3
+4
+>>> 
+
+>>> a=2
+>>> b=3
+>>> a+b
+5
+>>> a/b
+0
+>>> a*1.0/b
+0.66666666666666663
+>>> a=[1,2]
+>>> a[0]
+1
+>>> a[1]
+2
+>>> len(a)
+2
+>>> 
+>>> a.reverse()
+>>> a
+[2, 1]
+>>> a.sort()
+>>> a
+[1, 2]
+>>> print a
+[1, 2]
+>>> for i in a:
+	print i
+
+	
+1
+2
+>>> a.append(-5)
+>>> a
+[1, 2, -5]
+>>> a.sort()
+>>> a
+[-5, 1, 2]
+>>> for i in a:
+	print i
+
+	
+-5
+1
+2
+>>> 
+>>> a
+[-5, 1, 2]
+>>> b=[a,a]
+>>> b
+[[-5, 1, 2], [-5, 1, 2]]
+>>> b[0]
+[-5, 1, 2]
+>>> b[0][1]
+1
+>>> b[0][2]=8
+>>> b
+[[-5, 1, 8], [-5, 1, 8]]
+>>> a
+[-5, 1, 8]
+>>> a
+[-5, 1, 8]
+>>> b=[a[:],a[:]]
+>>> b
+[[-5, 1, 8], [-5, 1, 8]]
+>>> b[0][0]=6
+>>> b
+[[6, 1, 8], [-5, 1, 8]]
+>>> a
+[-5, 1, 8]
+>>> x=[]
+>>> tmp=[]
+>>> for i in range(3):
+	tmp.append(0)
+
+	
+>>> tmp
+[0, 0, 0]
+>>> for i in range(3):
+	x.append(tmp[:})
+	
+SyntaxError: invalid syntax
+>>> for i in range(3):
+	x.append(tmp[:])
+
+	
+>>> x
+[[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+>>> 
+
+>>> x
+[[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+>>> def fakt(n):
+	a=1
+	for i in range(n):
+		a=a*(i+1)
+	return a
+
+>>> fakt(2)
+2
+>>> fakt(3)
+6
+>>> fakt(5)
+120
+>>> 
+
+>>> f1=open("acids.txt", "r")
+Traceback (most recent call last):
+  File "<pyshell#67>", line 1, in <module>
+    f1=open("acids.txt", "r")
+IOError: [Errno 2] No such file or directory: 'acids.txt'
+>>> 
+1
+>>> f1=open("acids.txt", "r")
+>>> line=f1.readline()
+>>> line
+'ARNDCQEGHILKMFPSTWYV'
+>>> line.index('A')
+0
+>>> B in line
+Traceback (most recent call last):
+  File "<pyshell#72>", line 1, in <module>
+    B in line
+NameError: name 'B' is not defined
+>>> 'B' in line
+False
+>>> 'R' in line
+True
+>>> 
