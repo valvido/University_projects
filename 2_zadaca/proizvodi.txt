@@ -1,0 +1,4 @@
+Mrkva;500g;Eko proizvodnja Vrh;0.65EUR
+Eko mrkva;1000g;Prirodna proizvodnja;1.02EUR
+Mrkva;700g;Ljeto-jesen-zima d.o.o;0.74EUR
+Mrkva;300g;Velika tvrnica;0.36EUR
