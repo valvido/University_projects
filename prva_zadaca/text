@@ -1,0 +1,31 @@
+
+void *obradiKlijenta( void *parametar )
+{
+	parametarDretve *param = (parametarDretve *) parametar;
+	int commSocket  = param->commSocket;
+	int indexDretve = param->indexDretve;
+
+	// Očitaj oznaku vrste posla od klijenta
+    char vrstaPosla[100];
+    recv(param->commSocket, vrstaPosla, sizeof(vrstaPosla), 0);
+
+	//posalji broj listica klijentu
+	int mojBrojListica;
+    pthread_mutex_lock(&lokot_aktivneDretve);
+    mojBrojListica = brojListica++;
+
+	send(param->commSocket, &mojBrojListica, sizeof(mojBrojListica), 0);
+
+    pthread_mutex_unlock(&lokot_aktivneDretve);
+
+	close(param->commSocket);
+    return 0;
+}
+
+
+void *obradiSluzbenika(void *parametar) {
+    struct ParametarDretve *param = (struct ParametarDretve *)parametar;
+	char vrstaPosla[100];
+    recv(param->commSocket, vrstaPosla, sizeof(vrstaPosla), 0);
+	int mojBrojStranke = -1;
+}	
